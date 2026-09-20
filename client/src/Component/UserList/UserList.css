@@ -1,0 +1,71 @@
+
+.user-list-container {
+  padding: 15px;
+}
+
+/* User Card */
+
+.user-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px;
+
+  background-color: #303638;
+
+  border: 1px solid #6c757d;
+
+  border-radius: 8px;
+
+  color: white;
+
+  background-color: #2b3035;
+
+}
+
+/* User Information */
+
+.user-info h5 {
+  margin-bottom: 8px;
+
+  font-size: 20px;
+
+  color: white;
+}
+
+.user-info p {
+  margin-bottom: 0;
+
+  font-size: 16px;
+
+  color: #d1d1d1;
+}
+
+/* Delete Button */
+
+.user-card .btn-danger {
+  background-color: #e63956;
+
+  border: none;
+
+  padding: 10px 14px;
+}
+
+.user-card .btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Search Input */
+
+.user-list-container .form-control {
+  height: 64px;
+
+  font-size: 18px;
+}
+
+.user-list-container .input-group-text {
+  padding: 0 20px;
+
+  cursor: pointer;
+}

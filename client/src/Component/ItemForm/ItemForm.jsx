@@ -1,4 +1,24 @@
+import { useState } from "react";
+
 const ItemForm = () => {
+  const [ image,setImage] = useState();
+  const [ loading,setLoading] = useState();
+  const [ data,setData] = useState({
+    name :"",
+    category:"",
+    price:"",
+    description :"",
+  });
+
+
+  const onChangeHandler =(e) => {
+
+  }
+  const onSubmitHander = (e) => {
+    e.preventDefault();
+  }
+
+
   return (
     <div
       className="item-form-container"
@@ -17,6 +37,7 @@ const ItemForm = () => {
                   <label htmlFor="image" className="form-label">
                     <img src="https://placehold.co/48x48" alt="" />
                   </label>
+                  
                 </div>
 
                 <div className="mb-3">
@@ -28,6 +49,7 @@ const ItemForm = () => {
                       id="name"
                       className="form-control"
                       placeholder="Item name"
+                      onChange={ onChangeHandler} value={data.name}
                     />
                   </label>
                 </div>
@@ -40,7 +62,7 @@ const ItemForm = () => {
                   <select
                     name="category"
                     id="category"
-                    className="form-control"
+                    className="form-control"  onChange={ onChangeHandler} value={data.category}
                   >
                     <option value="">Select a category</option>
                     <option value="Category 1">Electronics</option>
@@ -58,6 +80,7 @@ const ItemForm = () => {
                     id="price"
                     className="form-control"
                     placeholder="&#8377; 200.00"
+                     onChange={ onChangeHandler} value={data.price}
                   />
                 </div>
 
@@ -70,6 +93,7 @@ const ItemForm = () => {
                       id="description"
                       className="form-control"
                       placeholder="write content here"
+                       onChange={ onChangeHandler} value={data.description}
                     />
                   </label>
                 </div>
@@ -89,8 +113,9 @@ const ItemForm = () => {
                   />
                 </div>
 
-                <button type="submit" className="btn btn-warning w-100">
-                  Submit
+                <button type="submit" className="btn btn-warning w-100" disabled ={loading}>
+                  {loading ? "loading...." : "save"}
+                  
                 </button>
               </form>
             </div>
